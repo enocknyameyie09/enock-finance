@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customer Login | Enock Finance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#083d77,#0f5fa6);
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.container{
+
+    width:400px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#083d77;
+
+    margin-bottom:10px;
+
+}
+
+.logo span{
+
+    color:#f4b400;
+
+}
+
+h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    color:#083d77;
+
+}
+
+.input-box{
+
+    margin-bottom:20px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-box input:focus{
+
+    border-color:#083d77;
+
+    outline:none;
+
+}
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+.options a{
+
+    color:#083d77;
+
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#f4b400;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:#083d77;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#083d77;
+
+    color:white;
+
+}
+
+.register{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+.register a{
+
+    color:#083d77;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.register a:hover{
+
+    text-decoration:underline;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+
+ENOCK<span>FINANCE</span>
+
+</div>
+
+<h2>Customer Login</h2>
+
+<form>
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input type="email" placeholder="Enter your email" required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input type="password" placeholder="Enter your password" required>
+
+</div>
+
+<div class="options">
+
+<label>
+
+<input type="checkbox">
+
+ Remember Me
+
+</label>
+
+<a href="#">Forgot Password?</a>
+
+</div>
+
+<button type="submit">Login</button>
+
+<div class="register">
+
+<p>Don't have an account?
+
+<a href="register.html">Create Account</a>
+
+</p>
+
+</div>
+
+<div class="register" style="margin-top:15px;">
+
+<a href="index.html">← Back to Home</a>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

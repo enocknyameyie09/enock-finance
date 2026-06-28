@@ -13,6 +13,138 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+    .hero{
+
+background:linear-gradient(135deg,#0f172a,#2563eb);
+
+color:white;
+
+text-align:center;
+
+padding:80px 20px;
+
+}
+
+.hero h1{
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.7;
+
+}
+
+.buttons{
+
+margin-top:35px;
+
+}
+
+.btn1,.btn2{
+
+display:inline-block;
+
+padding:15px 35px;
+
+margin:10px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn1{
+
+background:#fbbf24;
+
+color:#111;
+
+}
+
+.btn2{
+
+background:white;
+
+color:#2563eb;
+
+}
+
+.btn1:hover,
+
+.btn2:hover{
+
+transform:translateY(-4px);
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+padding:60px 40px;
+
+background:#f8fafc;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+transition:.3s;
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+color:#2563eb;
+
+}
+
+.card p{
+
+line-height:1.7;
+
+color:#555;
+
+}
+
 
 * {
 
@@ -161,6 +293,63 @@ header {
     <div class="menu-btn" onclick="openMenu()">☰</div>
 
 </header>
+<section class="hero">
+
+<h1>Empowering Your Financial Future</h1>
+
+<p>
+
+Secure savings, quick loans, and trusted financial services for
+
+individuals and businesses.
+
+</p>
+
+<div class="buttons">
+
+<a href="register.html" class="btn1">Open Account</a>
+
+<a href="login.html" class="btn2">Login</a>
+
+</div>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+
+<h2>💰 Savings</h2>
+
+<p>Grow your money with secure savings accounts and attractive interest.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🏦 Loans</h2>
+
+<p>Apply for personal and business loans with quick approval.</p>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Investments</h2>
+
+<p>Build wealth through reliable investment opportunities.</p>
+
+</div>
+
+<div class="card">
+
+<h2>🤝 Customer Care</h2>
+
+<p>Friendly support available whenever you need assistance.</p>
+
+</div>
+
+</section>
 
 <!-- OVERLAY -->
 

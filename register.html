@@ -1,88 +1,295 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 
-  <title>Create Account</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Account | Enock Microfinance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#0f172a,#1d4ed8,#2563eb);
+
+padding:30px;
+
+}
+
+.container{
+
+width:100%;
+
+max-width:460px;
+
+background:rgba(255,255,255,.98);
+
+padding:40px;
+
+border-radius:20px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.logo{
+
+text-align:center;
+
+margin-bottom:10px;
+
+font-size:30px;
+
+font-weight:700;
+
+color:#0f172a;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#666;
+
+margin-bottom:30px;
+
+}
+
+.input-group{
+
+margin-bottom:18px;
+
+}
+
+label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+color:#333;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+input:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 8px rgba(37,99,235,.25);
+
+}
+
+button{
+
+width:100%;
+
+padding:15px;
+
+background:#1d4ed8;
+
+color:white;
+
+font-size:17px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+margin-top:10px;
+
+}
+
+button:hover{
+
+background:#0f3fb8;
+
+transform:translateY(-2px);
+
+}
+
+.footer{
+
+text-align:center;
+
+margin-top:25px;
+
+font-size:15px;
+
+}
+
+.footer a{
+
+text-decoration:none;
+
+color:#1d4ed8;
+
+font-weight:600;
+
+}
+
+.footer a:hover{
+
+text-decoration:underline;
+
+}
+
+.security{
+
+margin-top:20px;
+
+text-align:center;
+
+font-size:13px;
+
+color:#777;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h2>Open Microfinance Account</h2>
+<div class="container">
 
-<input id="name" placeholder="Full Name"><br><br>
+<div class="logo">
 
-<input id="email" placeholder="Email"><br><br>
+🏦 Enock Microfinance
 
-<input id="password" type="password" placeholder="Password"><br><br>
+</div>
 
-<button onclick="register()">Create Account</button>
+<p class="subtitle">
 
-<p id="msg"></p>
+Create your secure customer account
 
-<script type="module">
+</p>
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+<form id="registerForm">
 
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+<div class="input-group">
 
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+<label>Full Name</label>
 
-const firebaseConfig = {
+<input type="text" id="fullname" placeholder="Enter your full name" required>
 
-  apiKey: "YOUR_KEY",
+</div>
 
-  authDomain: "YOUR_DOMAIN",
+<div class="input-group">
 
-  projectId: "YOUR_PROJECT_ID"
+<label>Email Address</label>
 
-};
+<input type="email" id="email" placeholder="example@email.com" required>
 
-const app = initializeApp(firebaseConfig);
+</div>
 
-const auth = getAuth();
+<div class="input-group">
 
-const db = getFirestore(app);
+<label>Phone Number</label>
 
-window.register = async function () {
+<input type="tel" id="phone" placeholder="+233 XX XXX XXXX" required>
 
-  let name = document.getElementById("name").value;
+</div>
 
-  let email = document.getElementById("email").value;
+<div class="input-group">
 
-  let password = document.getElementById("password").value;
+<label>Password</label>
 
-  try {
+<input type="password" id="password" placeholder="Create a password" required>
 
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+</div>
 
-    await setDoc(doc(db, "users", userCredential.user.uid), {
+<div class="input-group">
 
-      name: name,
+<label>Confirm Password</label>
 
-      email: email,
+<input type="password" id="confirmPassword" placeholder="Confirm password" required>
 
-      createdAt: new Date()
+</div>
 
-    });
+<button type="submit">
 
-    document.getElementById("msg").innerText = "Account created successfully!";
+Create Account
 
-    window.location.href = "login.html";
+</button>
 
-  } catch (error) {
+</form>
 
-    document.getElementById("msg").innerText = error.message;
+<div class="footer">
 
-  }
+Already have an account?
 
-};
+<a href="login.html">
 
-</script>
+Login
+
+</a>
+
+</div>
+
+<div class="security">
+
+🔒 Your information is securely protected.
+
+</div>
+
+</div>
+
+<script type="module" src="js/auth.js"></script>
 
 </body>
 
 </html>
-<script type="module" src="firebase.js"></script>

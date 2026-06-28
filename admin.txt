@@ -1,0 +1,7 @@
+dashboard.html
+settings.html
+customer.html
+profile.html
+savings.html
+loans.html
+report.html

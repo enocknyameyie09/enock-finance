@@ -1,0 +1,6 @@
+dashboard.html
+myloan.html
+mysavings.html
+transaction.html
+profile.html
+settings.html

@@ -14,291 +14,135 @@
 
 <style>
 
-*{
+* {
 
-margin:0;
+    margin: 0;
 
-padding:0;
+    padding: 0;
 
-box-sizing:border-box;
+    box-sizing: border-box;
 
-font-family:'Poppins',sans-serif;
-
-}
-
-body{
-
-background:#f5f8fc;
-
-color:#333;
+    font-family: 'Poppins', sans-serif;
 
 }
 
-header{
+/* HEADER */
 
-background:#083d77;
+header {
 
-padding:20px 8%;
+    display: flex;
 
-display:flex;
+    justify-content: space-between;
 
-justify-content:space-between;
+    align-items: center;
 
-align-items:center;
+    padding: 15px 20px;
 
-position:fixed;
+    background: #1e3a8a;
 
-width:100%;
-
-top:0;
-
-z-index:1000;
+    color: white;
 
 }
 
-.logo{
+.logo {
 
-color:#fff;
+    font-size: 20px;
 
-font-size:28px;
-
-font-weight:700;
+    font-weight: 600;
 
 }
 
-.logo span{
+/* HAMBURGER BUTTON */
 
-color:#f4b400;
+.menu-btn {
 
-}
+    font-size: 28px;
 
-nav a{
+    cursor: pointer;
 
-color:white;
-
-text-decoration:none;
-
-margin-left:30px;
-
-font-weight:500;
-
-transition:.3s;
+    user-select: none;
 
 }
 
-nav a:hover{
+/* OVERLAY BACKGROUND */
 
-color:#f4b400;
+.overlay {
 
-}
+    position: fixed;
 
-.hero{
+    top: 0;
 
-margin-top:80px;
+    left: 0;
 
-display:flex;
+    width: 100%;
 
-justify-content:space-between;
+    height: 100%;
 
-align-items:center;
+    background: rgba(0,0,0,0.5);
 
-padding:80px 8%;
+    display: none;
 
-min-height:90vh;
-
-background:linear-gradient(to right,#083d77,#0f5fa6);
-
-color:white;
+    z-index: 10;
 
 }
 
-.hero-text{
+/* SIDE MENU */
 
-max-width:550px;
+.side-menu {
 
-}
+    position: fixed;
 
-.hero-text h1{
+    top: 0;
 
-font-size:55px;
+    right: -260px;
 
-margin-bottom:20px;
+    width: 250px;
 
-line-height:1.2;
+    height: 100%;
 
-}
+    background: white;
 
-.hero-text p{
+    padding: 20px;
 
-font-size:18px;
+    transition: 0.3s ease;
 
-margin-bottom:35px;
-
-}
-
-.btn{
-
-display:inline-block;
-
-padding:15px 35px;
-
-background:#f4b400;
-
-color:#083d77;
-
-font-weight:bold;
-
-text-decoration:none;
-
-border-radius:40px;
-
-transition:.3s;
+    z-index: 20;
 
 }
 
-.btn:hover{
+.side-menu h3 {
 
-background:white;
+    margin-bottom: 20px;
 
-}
-
-.hero img{
-
-width:500px;
+    color: #1e3a8a;
 
 }
 
-.services{
+.side-menu a {
 
-padding:80px 8%;
+    display: block;
 
-text-align:center;
+    padding: 12px 0;
 
-}
+    text-decoration: none;
 
-.services h2{
+    color: #333;
 
-font-size:40px;
-
-margin-bottom:50px;
-
-color:#083d77;
+    border-bottom: 1px solid #eee;
 
 }
 
-.cards{
+/* ACTIVE STATES */
 
-display:grid;
+.side-menu.active {
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:25px;
+    right: 0;
 
 }
 
-.card{
+.overlay.active {
 
-background:white;
-
-padding:35px;
-
-border-radius:15px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-transition:.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.card h3{
-
-color:#083d77;
-
-margin-bottom:15px;
-
-}
-
-.why{
-
-background:#083d77;
-
-color:white;
-
-padding:80px 8%;
-
-text-align:center;
-
-}
-
-.why h2{
-
-margin-bottom:40px;
-
-font-size:40px;
-
-}
-
-.features{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:30px;
-
-}
-
-.feature{
-
-background:rgba(255,255,255,.1);
-
-padding:25px;
-
-border-radius:15px;
-
-}
-
-footer{
-
-background:#021f3f;
-
-color:white;
-
-text-align:center;
-
-padding:25px;
-
-}
-
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-.hero img{
-
-width:100%;
-
-margin-top:40px;
-
-}
-
-.hero-text h1{
-
-font-size:40px;
-
-}
+    display: block;
 
 }
 
@@ -310,134 +154,60 @@ font-size:40px;
 
 <header>
 
-<div class="logo">
+    <div class="logo">Enock Microfinance</div>
 
-ENOCK<span>FINANCE</span>
+    <!-- HAMBURGER ICON -->
 
-</div>
-
-<nav>
-
-<a href="home.html">Home</a>
-<a href="login.html">Login</a>
-<a href="about.html">About</a>
-<a href="dashboard.html">Dashboard</a>
-<a href="services.html">Services</a>
-
-<a href="loans.html">Loans</a>
-
-<a href="savings.html">Savings</a>
-
-<a href="contact.html">Contact</a>
-
-</nav>
+    <div class="menu-btn" onclick="openMenu()">☰</div>
 
 </header>
 
-<section class="hero">
+<!-- OVERLAY -->
 
-<div class="hero-text">
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<h1>Empowering Your Financial Future</h1>
+<!-- SIDE MENU -->
 
-<p>
+<div class="side-menu" id="sideMenu">
 
-Fast Loans.
+    <h3>Menu</h3>
 
-Secure Savings.
+    <a href="index.html">Home</a>
 
-Trusted Financial Solutions for Individuals and Businesses.
+    <a href="login.html">Login</a>
 
-</p>
+    <a href="register.html">Register</a>
 
-<a href="#" class="btn">Apply for a Loan</a>
+    <a href="dashboard.html">Dashboard</a>
 
-</div>
+    <a href="customers.html">Customers</a>
+<a href="about.html">About</a>
+    <a href="loans.html">Loans</a>
 
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900" alt="Finance">
-
-</section>
-
-<section class="services">
-
-<h2>Our Services</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Personal Loans</h3>
-
-<p>Affordable loans with flexible repayment plans.</p>
+    <a href="savings.html">Savings</a>
 
 </div>
 
-<div class="card">
+<script>
 
-<h3>Business Loans</h3>
+function openMenu() {
 
-<p>Grow your business with quick financial support.</p>
+    document.getElementById("sideMenu").classList.add("active");
 
-</div>
+    document.getElementById("overlay").classList.add("active");
 
-<div class="card">
+}
 
-<h3>Savings Accounts</h3>
+function closeMenu() {
 
-<p>Save securely and earn attractive returns.</p>
+    document.getElementById("sideMenu").classList.remove("active");
 
-</div>
+    document.getElementById("overlay").classList.remove("active");
 
-<div class="card">
+}
 
-<h3>Financial Advisory</h3>
+</script>
 
-<p>Professional guidance to help you achieve your goals.</p>
+</body>
 
-</div>
-
-</div>
-
-</section>
-
-<section class="why">
-
-<h2>Why Choose Us?</h2>
-
-<div class="features">
-
-<div class="feature">
-
-<h3>Fast Approval</h3>
-
-<p>Loan decisions within 24 hours.</p>
-
-</div>
-
-<div class="feature">
-
-<h3>Trusted</h3>
-
-<p>Reliable financial services you can count on.</p>
-
-</div>
-
-<div class="feature">
-
-<h3>Low Interest</h3>
-
-<p>Competitive and transparent rates.</p>
-
-</div>
-
-<div class="feature">
-
-<h3>24/7 Support</h3>
-
-<p>Friendly customer service whenever you need us.</p>
-
-</div>
-
-</div>
-
-</section>
+</html>
